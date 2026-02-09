@@ -1,9 +1,15 @@
+/**
+ * File: 5-printf.c
+ * Author: bfrasholb
+ * Description: Prints a sentence
+ */
+
 #include <stdio.h>
 
 /**
- *A Short Script
- * main: prints a statement
- * return: 0
+ *main - prints with proper grammar, but the outcome is a piece of art,
+ *
+ *return: 0 on success
  */
 
 int main(void)
