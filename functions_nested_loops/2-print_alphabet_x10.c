@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *print_alphabet-Description.
+ *print_alphabet_x10-Description.
  *
  *Return:0
  */
@@ -17,7 +17,7 @@ while (j <= 'z')
 _putchar(j);
 j++;
 }
- _putchar('\n');
+_putchar('\n');
 i++;
 }
 }
