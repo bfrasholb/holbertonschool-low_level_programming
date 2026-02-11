@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *main-Description.
+ *print_alphabet-Description.
  *
  *Return:0
  */
