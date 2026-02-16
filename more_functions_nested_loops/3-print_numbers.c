@@ -3,7 +3,7 @@
 
 /**
  *print_numbers-description.
- *@i:an integer
+ *
  *Return: 0
  *
  */
