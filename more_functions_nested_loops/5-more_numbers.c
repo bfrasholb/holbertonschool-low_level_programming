@@ -15,19 +15,12 @@ while (j < 10)
 int i = 0;
 while (i < 15)
 {
-int a = i / 10;
-int b = i % 10;
-if (a == 0)
+if (i > 9)
 {
-_putchar(i + '0');
-i++;
+_putchar((i/10) + '0');
 }
-else
-{
-_putchar(a + '0');
-_putchar(b + '0');
+_putchar((i % 10) + '0');
 i++;
-}
 }
 _putchar('\n');
 j++;
