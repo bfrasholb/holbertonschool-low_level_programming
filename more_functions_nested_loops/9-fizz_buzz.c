@@ -12,24 +12,23 @@ while (i <= 100)
 {
 if (i % 3 == 0 && i % 5 == 0)
 {
-printf("FizzBuzz ");
-i++;
+printf("FizzBuzz");
 }
-if (i % 3 == 0)
+else if (i % 3 == 0)
 {
-printf("Fizz ");
-i++;
+printf("Fizz");
 }
-if (i % 5 == 0)
+else if (i % 5 == 0)
 {
-printf("Buzz ");
-i++;
+printf("Buzz");
 }
 else
 {
-printf("%d ", i);
-i++;
+printf("%d", i);
 }
+if (i != 100)
+printf(" ");
+i++;
 }
 printf("\n");
 return (0);
