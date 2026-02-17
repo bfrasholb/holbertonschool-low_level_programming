@@ -8,18 +8,20 @@
 int _atoi(char *s)
 {
   int i = 0;
+  int digits = 0;
+  int sign = 1;
   
   while (s[i] != '\0')
     {
       if ((s[i] <= '9') && (s[i] >= '0'))
 	{
-	  printf("%d", s[i]);
-	  i++;
+	  digits = digits * 10 + (s[i] - '0');
 	}
-      else
+      else if (s[i] == '-')
 	{
-       	  i++;
+	  sign *= -1;
 	}
+      i++;
     }
-  return (1);
+  return (digits * sign);
 }
