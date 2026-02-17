@@ -26,17 +26,9 @@ else if (s[i] >= '0' && s[i] <= '9')
 int overflow = s[i] - '0';
 first_digit = 1;
 {
-if (sign == 1)
+if (digits < (INT_MIN + overflow) / 10)
 {
-if (digits > (INT_MAX - overflow) / 10)
-return INT_MAX;
-}
-else
-{
-if (digits > (-(INT_MIN + overflow)) / 10)
-{
-return INT_MIN;
-}
+return (sign == 1) ? INT_MAX : INT_MIN;
 }
 digits = digits * 10 + (s[i] - '0');
 }
