@@ -28,7 +28,7 @@ first_digit = 1;
 {
 if (digits < (INT_MIN + overflow) / 10)
 {
-return (sign == 1) ? INT_MAX : INT_MIN;
+return ((sign == 1) ? INT_MAX : INT_MIN);
 }
 digits = digits * 10 + (s[i] - '0');
 }
