@@ -2,8 +2,10 @@
 #include "main.h"
 
 /**
-*
-*/
+ *_atoi-function returns the first integer in a string as type int
+ *@s:input string
+ *Return:returns the first number as type int
+ */
 
 int _atoi(char *s)
 {
@@ -12,20 +14,22 @@ int digits = 0;
 int sign = 1;
 int first_digit = 0;
 
-while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+while (s[i] != '\0')
 {
-i++;
-}
-while ((s[i] == '-') && !first_digit)
+if (s[i] == '-' && !first_digit)
 {
 sign *= -1;
-i++;
 }
-while (s[i] >= '0' && s[i] <= '9')
+else if (s[i] >= '0' && s[i] <= '9')
 {
 digits = digits * 10 + (s[i] - '0');
 first_digit = 1;
+}
+else if (first_digit)
+{
+break;
+}
 i++;
 }
-return (digits * sign);
+return (digits *sign);
 }
