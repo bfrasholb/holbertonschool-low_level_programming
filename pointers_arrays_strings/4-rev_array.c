@@ -10,16 +10,21 @@
 
 void reverse_array(int *a, int n)
 {
-int i = n - 1;
+int i = n;
+int j = 0;
+int *t = a;
+int s = 0;
 
-while (i >= 0)
+while (j <= n / 2)
 {
-if (i != n - 1)
-{
-printf(", ");
-}
-printf("%d", a[i]);
+t[j] = a[i];
+t[i] = a[j];
 i--;
+j++;
 }
-printf("\n");
+while (s < n)
+{
+a[s] = t[s];
+s++;
+}
 }
