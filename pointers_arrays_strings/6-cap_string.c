@@ -4,13 +4,13 @@
 /**
 *cap_string-sets  the firs letter after each separator to a capital.
 *@str:input string.
-*Return: returns the corrected string.
+*Return: returns the string.
 */
 
 char *cap_string(char *str)
 {
 int i = 0;
-int b;
+int b = 1;
 
 while (str[i] != '\0')
 {
