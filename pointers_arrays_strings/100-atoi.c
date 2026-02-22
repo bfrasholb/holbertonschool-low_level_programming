@@ -23,15 +23,8 @@ sign *= -1;
 }
 else if (s[i] >= '0' && s[i] <= '9')
 {
-int overflow = s[i] - '0';
 first_digit = 1;
-{
-if (digits < (INT_MIN + overflow) / 10)
-{
-return ((sign == 1) ? INT_MAX : INT_MIN);
-}
 digits = digits * 10 + (s[i] - '0');
-}
 }
 else if (first_digit)
 {
@@ -39,5 +32,6 @@ break;
 }
 i++;
 }
-return (digits *sign);
+digits *= sign;
+return (digits);
 }
