@@ -24,7 +24,6 @@ break
 elif [ " ${CONFIRM[*]} " == " ${deny[*]} " ]]; then
 echo "$FILE remains staged, unpushed."
 break
-fi
 elif
 echo "Please answer Yes or No."
 fi
