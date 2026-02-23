@@ -20,12 +20,10 @@ deny=("n" "o" "N" "O")
 if [[ " ${CONFIRM[*} " == " ${confirm[*]} " ]]; then
 git push origin master
 echo "$FILE pushed to repo."
-fi
 break
 elif [ " ${CONFIRM[*]} " == " ${deny[*]} " ]]; then
 echo "$FILE remains staged, unpushed."
 break
-fi
 elif
 echo "Please answer Yes or No."
 fi
