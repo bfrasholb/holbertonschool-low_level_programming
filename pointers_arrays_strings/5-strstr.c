@@ -16,27 +16,26 @@ char *_strstr(char *haystack, char *needle)
   while (*needle)
     {
       ln++;
+      needle++;
     }
+  needle -= ln;
   
   while (*haystack)
     {
+      h = haystack;
       n = needle;
       match = 0;
       while (*n)
 	{
-	  h = haystack;
-	  if (match == ln)
-	    {
-	      return (haystack);
-	    }
-	  if (*needle == *h)
-	    {
-	      match++;
-	    }
-	  needle++;
+	  match++;
+	  n++;
+	  h++;
 	}
+      if (match == ln)
+	    {
+	      return (h);
+	    }
       haystack++;
-    }
-  
+    }  
 return (NULL);
 }
