@@ -1,0 +1,29 @@
+#!/bin/bash
+
+FILE=$(find . -type f -not -path "*/.git/*" -printf "%T@ %p\n" \
+	    | sort -nr \
+	    | head -n 1 \
+	    | cut -d' ' -f2-)
+
+echo "Last modified file: $FILE"
+
+git add "$FILE"
+git commit -m "Autoupdate"
+
+while true; do
+      read -p "Push $FILE to GitHub? (y/n): " CONFIRM
+      case "CONFIRM" in
+      [Yy]|[Yy][Ee[Ss])
+		git push
+		echo "$FILE pushed."
+		break
+		;;
+	[Nn]|[Nn][Oo])
+		echo "Push Cancelled."
+		break
+		;;
+	*)
+		echo "Please Answer Y or N."
+		;;
+	esac
+done
