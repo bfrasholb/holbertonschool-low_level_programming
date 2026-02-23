@@ -11,19 +11,19 @@ git add "$FILE"
 git commit -m "Autoupdate"
 
 while true; do
-      read -p "Push $FILE to GitHub? (y/n): " CONFIRM
-      case "CONFIRM" in
-      [Yy]|[Yy][Ee[Ss])
-		git push
-		echo "$FILE pushed."
-		break
-		;;
-	[Nn]|[Nn][Oo])
-		echo "Push Cancelled."
-		break
-		;;
-	*)
-		echo "Please Answer Y or N."
-		;;
-	esac
+      read -r -p "Push $FILE to GitHub? (y/n): " CONFIRM
+
+      confirm=("y" "e" "s" "Y" "E" "S")
+      deny=("n" "o" "N" "O")
+
+      if [[ " ${confirm[*]} " == " ${CONFIRM[*]} " ]]; then
+	  git push origin master
+	  echo "$FILE pushed to repo."
+	  break
+      elif [ " ${CONFIRM[*]} " == " ${deny[*]} " ]]; then
+						      echo "$FILE remains staged, unpushed."
+						      break
+						   elif
+						       echo "Please answer Yes or No."
+						       fi
 done
