@@ -26,5 +26,4 @@ echo "$FILE remains staged, unpushed."
 break
 elif
 echo "Please answer Yes or No."
-fi
 done
