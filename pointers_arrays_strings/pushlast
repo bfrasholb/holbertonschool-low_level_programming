@@ -1,9 +1,9 @@
 #!/bin/bash
 
 FILE=$(find . -type f -not -path "*/.git/*" -printf "%T@ %p\n" \
-	    | sort -nr \
-	    | head -n 1 \
-	    | cut -d' ' -f2-)
+| sort -nr \
+| head -n 1 \
+| cut -d' ' -f2-)
 
 echo "Last modified file: $FILE"
 
@@ -11,19 +11,22 @@ git add "$FILE"
 git commit -m "Autoupdate"
 
 while true; do
-      read -r -p "Push $FILE to GitHub? (y/n): " CONFIRM
 
-      confirm=("y" "e" "s" "Y" "E" "S")
-      deny=("n" "o" "N" "O")
+read -r -p "Push $FILE to GitHub? (y/n): " CONFIRM
 
-      if [[ " ${confirm[*]} " == " ${CONFIRM[*]} " ]]; then
-	  git push origin master
-	  echo "$FILE pushed to repo."
-	  break
-      elif [ " ${CONFIRM[*]} " == " ${deny[*]} " ]]; then
-						      echo "$FILE remains staged, unpushed."
-						      break
-						   elif
-						       echo "Please answer Yes or No."
-						       fi
+confirm=("y" "e" "s" "Y" "E" "S")
+deny=("n" "o" "N" "O")
+
+if [[ " ${CONFIRM[*} " == " ${confirm[*]} " ]]; then
+git push origin master
+echo "$FILE pushed to repo."
+fi
+break
+elif [ " ${CONFIRM[*]} " == " ${deny[*]} " ]]; then
+echo "$FILE remains staged, unpushed."
+break
+fi
+elif
+echo "Please answer Yes or No."
+fi
 done
