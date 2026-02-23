@@ -17,7 +17,7 @@ read -r -p "Push $FILE to GitHub? (y/n): " CONFIRM
 confirm=("y" "e" "s" "Y" "E" "S")
 deny=("n" "o" "N" "O")
 
-if [[ " ${CONFIRM[*} " == " ${confirm[*]} " ]]; then
+if [[ " ${CONFIRM[*]} " == " ${confirm[*]} " ]]; then
 git push origin master
 echo "$FILE pushed to repo."
 break
