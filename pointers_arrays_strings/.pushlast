@@ -21,7 +21,8 @@ if [[ "$CONFIRM" == "y" || "$CONFIRM" == "yes" ]]; then
     echo "$FILE pushed to repo."
     break
 elif [[ "$CONFIRM" == "n" || "$CONFIRM" == "no" ]]; then
-    echo "$FILE remains staged, unpushed."
+    git reset "$FILE"
+    echo "$FILE unstaged, nothing will be pushed."
     break
 else
     echo "Please answer Yes or No."
