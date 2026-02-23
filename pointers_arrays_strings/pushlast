@@ -21,7 +21,6 @@ if [[ " ${CONFIRM[*} " == " ${confirm[*]} " ]]; then
 git push origin master
 echo "$FILE pushed to repo."
 break
-fi
 elif [ " ${CONFIRM[*]} " == " ${deny[*]} " ]]; then
 echo "$FILE remains staged, unpushed."
 break
