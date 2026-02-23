@@ -12,21 +12,26 @@ unsigned int _strspn(char *s, char *accept)
 {
 int i = 0;
 char *a;
+int match;
 
-while (*s)
-{
-a = accept;
-while (*a)
-{
-if (*s == *a)
-{
-i++;
-}
-a++;
-}
-if (*a == '\0')
-return (i);
-s++;
-}
+	while (*s)
+	{
+		a = accept;
+		while (*a)
+		{
+			if (*s == *a)
+			{
+			match = 1;
+			break;
+			}
+		a++;
+		}
+		if (!match)
+		  {
+		    return (i);
+		  }
+		i++;
+     		s++;
+	}
 return (i);
 }
