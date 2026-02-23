@@ -14,18 +14,17 @@ while true; do
 
 read -r -p "Push $FILE to GitHub? (y/n): " CONFIRM
 
-confirm=("y" "e" "s" "Y" "E" "S")
-deny=("n" "o" "N" "O")
+CONFIRM=$(echo "$CONFIRM" | tr '[:upper:]' '[:lower:]' | tr -d '[:space:]')
 
-if [[ " ${CONFIRM[*]} " == " ${confirm[*]} " ]]; then
-git push origin master
-echo "$FILE pushed to repo."
-break
-elif [ " ${CONFIRM[*]} " == " ${deny[*]} " ]]; then
-echo "$FILE remains staged, unpushed."
-break
-elif
-echo "Please answer Yes or No."
-fi
-break
+if [[ "$CONFIRM" == "y" || "$CONFIRM" == "yes" ]]; then
+    git push origin master
+    echo "$FILE pushed to repo."
+    break
+elif [[ "$CONFIRM" == "n" || "$CONFIRM" == "no" ]]; then
+    echo "$FILE remains staged, unpushed."
+    break
+else
+    echo "Please answer Yes or No."
+        fi
+
 done
