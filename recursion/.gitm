@@ -1,5 +1,0 @@
-#!/bin/bash
-
-git add main.h
-git commit -m "autoupdate main"
-git push origin master
