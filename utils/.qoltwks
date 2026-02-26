@@ -102,4 +102,4 @@ newtask() {
 	  echo "}" >> $1;
 }
 
-" >> .bashrc
+" >> .bashrc && source .bashrc
