@@ -1,2 +1,2 @@
 #!/bin/bash
-mv .bashrc / && source /.bashrc
+cp .bashrc ~ && sleep 3 && source ~/.bashrc
