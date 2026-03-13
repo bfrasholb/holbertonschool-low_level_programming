@@ -200,6 +200,12 @@ newtask() {
     echo "}" >> $1;
     }
 
+# Aliases
 alias gitm="/root/holbertonschool-low_level_programming/utils/scripts/.gitm"
 alias nq="/root/holbertonschool-low_level_programming/utils/scripts/.nextq"
 alias pl="/root/holbertonschool-low_level_programming/utils/scripts/.pushlast"
+
+# Git Configs
+git config --global user.name "bfrasholb"
+git config --global user.email "13065@holbertonstudents.com"
+git config --global credential.helper 'cache --timeout=7200'
