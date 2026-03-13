@@ -1,3 +1,0 @@
-#!/bin/bash
-rm *~ *# *main.c 2> /dev/null
-ls --color=auto -lha
