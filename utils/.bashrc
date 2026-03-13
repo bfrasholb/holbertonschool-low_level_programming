@@ -199,3 +199,7 @@ newtask() {
     echo "{" >> $1;
     echo "}" >> $1;
     }
+
+alias gitm="/root/holbertonschool-low_level_programming/utils/scripts/.gitm"
+alias nq="/root/holbertonschool-low_level_programming/utils/scripts/.nextq"
+alias pl="/root/holbertonschool-low_level_programming/utils/scripts/.pushlast"
