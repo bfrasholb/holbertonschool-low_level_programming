@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include "3-calc.h"
 
 /**
 *get_op_func-compares input operator to a list of known operators
