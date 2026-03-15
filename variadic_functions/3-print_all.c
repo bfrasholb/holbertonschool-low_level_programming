@@ -8,7 +8,6 @@
 void print_all(const char * const format, ...)
 {
 int j, i = 0;
-int printed = 0;
 va_list args;
 
 printer_t ops[] = {
@@ -27,10 +26,7 @@ while (ops[j].symbol)
 {
 if (format[i] == ops[j].symbol)
 {
-if (printed)
-printf(", ");
 ops[j].func(args);
-printed = 1;
 break;
 }
 j++;
