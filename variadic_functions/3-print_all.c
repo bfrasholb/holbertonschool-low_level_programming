@@ -42,7 +42,8 @@ if (printed == 1)
 printed = 1;
 }
 va_end(args);
-printf("\n"); }
+printf("\n");
+}
 
 /**
 *print_char-prints a character
