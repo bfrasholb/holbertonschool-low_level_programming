@@ -19,10 +19,6 @@ printer_t ops[] = {
 {0, NULL}
 };
 
-if (printed == 1)
-{
-printed = 1;
-}
 va_start(args, format);
 while (format && format[i])
 {
