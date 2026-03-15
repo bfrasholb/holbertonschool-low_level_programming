@@ -37,6 +37,10 @@ j++;
 }
 i++;
 }
+if (printed == 1)
+{
+printed = 1;
+}
 va_end(args);
 printf("\n"); }
 
