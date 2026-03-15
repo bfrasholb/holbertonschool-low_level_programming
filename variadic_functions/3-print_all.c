@@ -8,6 +8,7 @@
 void print_all(const char * const format, ...)
 {
 int j, i = 0;
+char sep[3] = {'\0', '\0', '\0'};
 va_list args;
 
 printer_t ops[] = {
@@ -26,7 +27,10 @@ while (ops[j].symbol)
 {
 if (format[i] == ops[j].symbol)
 {
+printf("%s", sep);
 ops[j].func(args);
+sep[0] = ',';
+sep[1] = ' ';
 break;
 }
 j++;
