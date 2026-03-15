@@ -33,6 +33,7 @@ printf(", ");
 }
 ops[j].func(args);
 printed = 1;
+break;
 }
 j++;
 }
