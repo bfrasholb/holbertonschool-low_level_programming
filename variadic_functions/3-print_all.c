@@ -1,65 +1,6 @@
 #include "variadic_functions.h"
 
 /**
-*print_char-prints a character
-*@args:arguments
-*/
-
-void print_char(va_list args)
-{
-char c = va_arg(args, int);
-printf("%c", (char)c);
-}
-
-/**
-*print_int-prints an integer
-*@args:arguments
-*/
-
-void print_int(va_list args)
-{
-int n = va_arg(args, int);
-printf("%d", n);
-}
-
-/**
-*print_float-prints a double
-*@args:arguments
-*/
-
-void print_float(va_list args)
-{
-double f = va_arg(args, double);
-printf("%f", f);
-}
-
-/**
-*print_string-prints a string or (nil) if string == NULL
-*@args:arguments
-*/
-
-void print_string(va_list args)
-{
-char *s = va_arg(args, char *);
-if (s == NULL)
-printf("(nil)");
-else
-printf("%s", s);
-}
-
-/**
-*struct printer-a table linking types of arguments to printer functions
-*@symbol:symbol for type
-*@func:printer function respective to type
-*/
-
-typedef struct printer
-{
-char symbol;
-void (*func)(va_list);
-} printer_t;
-
-/**
 *print_all-prints anything
 *@format:a list of types of arguments passed to the function
 */
@@ -99,4 +40,54 @@ i++;
 }
 va_end(args);
 printf("\n");
+}
+
+/**
+*print_char-prints a character
+*@args:arguments
+*/
+
+void print_char(va_list args)
+{
+char c = va_arg(args, int);
+
+printf("%c", (char)c);
+}
+
+/**
+*print_int-prints an integer
+*@args:arguments
+*/
+
+void print_int(va_list args)
+{
+int n = va_arg(args, int);
+
+printf("%d", n);
+}
+
+/**
+*print_float-prints a double
+*@args:arguments
+*/
+
+void print_float(va_list args)
+{
+double f = va_arg(args, double);
+printf("%f", f);
+}
+
+/**
+*print_string-prints a string or (nil) if string == NULL
+*@args:arguments
+*/
+
+void print_string(va_list args)
+{
+char *s = va_arg(args, char *);
+
+if (s == NULL)
+printf("(nil)");
+else
+printf("%s", s);
 }
