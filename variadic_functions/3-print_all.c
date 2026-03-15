@@ -28,9 +28,7 @@ while (ops[j].symbol)
 if (format[i] == ops[j].symbol)
 {
 if (printed)
-{
 printf(", ");
-}
 ops[j].func(args);
 printed = 1;
 break;
