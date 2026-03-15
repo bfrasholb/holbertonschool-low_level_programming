@@ -20,7 +20,7 @@ printer_t ops[] = {
 };
 
 va_start(args, format);
-while (format[i] && format)
+while (format && format[i])
 {
 j = 0;
 while (ops[j].symbol)
