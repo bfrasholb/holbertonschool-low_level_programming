@@ -13,15 +13,15 @@ void print_float(va_list args);
 void print_string(va_list args);
 
 /**
- *struct printer-a table linking types of arguments to printer functions
- *@symbol:symbol for type
- *@func:printer function respective to type
- */
+*struct printer-a table linking types of arguments to printer functions
+*@symbol:symbol for type
+*@func:printer function respective to type
+*/
 
 typedef struct printer
 {
-  char symbol;
-  void (*func)(va_list);
+char symbol;
+void (*func)(va_list);
 } printer_t;
 
 #endif
