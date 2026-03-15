@@ -38,8 +38,7 @@ j++;
 i++;
 }
 va_end(args);
-printf("\n");
-}
+printf("\n"); }
 
 /**
 *print_char-prints a character
