@@ -21,7 +21,7 @@ printf("%s", separator);
 if (s != NULL)
 printf("%s", s);
 else
-printf("nil");
+printf("(nil)");
 i++;
 }
 va_end(args);
