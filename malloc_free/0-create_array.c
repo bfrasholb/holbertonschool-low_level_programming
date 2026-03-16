@@ -1,31 +1,25 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
- *create_array-description
- *@size:size
- *@c:character
- *Return:value dependent on result
- */
+*create_array-description
+*@size:size
+*@c:character
+*Return:value dependent on result
+*/
 
 char *create_array(unsigned int size, char c)
 {
-char *arr;
+char *array;
 unsigned int i = 0;
 
 if (size == 0)
-{
 return (NULL);
-}
-arr = (char *)malloc(size * sizeof(char));
-if (arr == NULL)
-{
+array = (char *)malloc(size * sizeof(char));
+if (array == NULL)
 return (NULL);
-}
 while (i < size)
 {
-arr[i] = c;
-i++;
+array[i++] = c;
 }
-return (arr);
+return (array);
 }
