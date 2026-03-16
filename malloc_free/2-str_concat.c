@@ -20,7 +20,7 @@ while (s1[len1] != '\0')
 len1++;
 while (s2[len2] != '\0')
 len2++;
-result = (char *)malloc(sizeof(char) * (len1 + len2));
+result = (char *)malloc(sizeof(char) * (len1 + len2 + 1));
 if (result == NULL)
 return (NULL);
 while (i < (len1 + len2))
