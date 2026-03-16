@@ -30,19 +30,12 @@ return (NULL);
 while (i < len1 + n + 1)
 {
 if (i < len1)
-{
 result[i] = s1[i];
-}
 else if (i < len1 + n)
-{
 result[i] = s2[i - len1];
-}
 else
-{
 result[i] = '\0';
-}
 i++;
 }
-
 return (result);
 }
