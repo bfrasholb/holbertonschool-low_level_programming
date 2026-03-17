@@ -3,9 +3,9 @@
 #include "dog.h"
 
 /**
-* str_len - returns the length of a string
-* @s: string to measure
-* Return: length of string
+*str_len-returns the length of a string
+*@s:string to measure
+*Return: length of string
 */
 int str_len(char *s)
 {
@@ -17,10 +17,10 @@ return (i);
 }
 
 /**
-* str_copy - copies a string from src to dest
-* @dest: destination string
-* @src: source string
-* Return: pointer to dest
+*str_copy-copies a string from src to dest
+*@dest:destination string
+*@src:source string
+*Return:pointer to dest
 */
 char *str_copy(char *dest, char *src)
 {
@@ -36,11 +36,11 @@ return (dest);
 }
 
 /**
-* new_dog - creates a new dog
-* @name: name of the dog
-* @age: age of the dog
-* @owner: owner of the dog
-* Return: pointer to new dog, or NULL if failure
+*new_dog-creates a new dog
+*@name:name of the dog
+*@age:age of the dog
+*@owner:owner of the dog
+*Return:pointer to new dog, or NULL if failure
 */
 dog_t *new_dog(char *name, float age, char *owner)
 {
