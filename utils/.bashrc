@@ -168,19 +168,9 @@ VCS_PROMPT(){
     fi
 }
 
-AGE()
-{
-    agefile=~/.age
-    if [ "$1" == "RESET" ]; then
-	touch $agefile;
-    elif [ $(($(date +%s) - $(date +%s -r $agefile))) -gt "12600" ]; then
-	echo -n "\n\[\e[38;5;231;48;2;210;15;57m\]SANDBOX OVER 3 AND A HALF HOURS OLD!!!\nenter 'AGE RESET' to reset this warning$AE";
-    fi
-}
-
 ###PROMPT
 prompt() {
-    L1="\u@sandbox:\w jobs:\j$(AGE)";
+    L1="\u@sandbox:\w jobs:\j";
     R1="$(VCS_PROMPT)";
     L2="\n>$AE";
     PS1=$(printf "%s%*s%s%s%s" "$GREEN" "$(tput cols)" "$R1\r" "$MPC" "$L1" "$L2");
