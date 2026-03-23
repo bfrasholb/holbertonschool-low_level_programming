@@ -1,9 +1,18 @@
 #!/bin/bash
 
+# Check if a branch name was provided
+if [ -z "$1" ]; then
+	echo "Usage: pl <branch>"
+	exit 1
+fi
+
+BRANCH="$1"
+
+# Find the most recently modified file (excluding .git)
 FILE=$(find . -type f -not -path "*/.git/*" -printf "%T@ %p\n" \
-| sort -nr \
-| head -n 1 \
-| cut -d' ' -f2-)
+	| sort -nr \
+	| head -n 1 \
+	| cut -d' ' -f2-)
 
 echo "Last modified file: $FILE"
 
@@ -11,21 +20,19 @@ git add "$FILE"
 git commit -m "Autoupdate"
 
 while true; do
+	read -r -p "Push $FILE to GitHub branch '$BRANCH'? (y/n): " CONFIRM
 
-read -r -p "Push $FILE to GitHub? (y/n): " CONFIRM
+	CONFIRM=$(echo "$CONFIRM" | tr '[:upper:]' '[:lower:]' | tr -d '[:space:]')
 
-CONFIRM=$(echo "$CONFIRM" | tr '[:upper:]' '[:lower:]' | tr -d '[:space:]')
-
-if [[ "$CONFIRM" == "y" || "$CONFIRM" == "yes" ]]; then
-    git push origin main
-    echo "$FILE pushed to repo."
-    break
-elif [[ "$CONFIRM" == "n" || "$CONFIRM" == "no" ]]; then
-    git reset
-    echo "$FILE unstaged, nothing will be pushed."
-    break
-else
-    echo "Please answer Yes or No."
-        fi
-
+	if [[ "$CONFIRM" == "y" || "$CONFIRM" == "yes" ]]; then
+		git push origin "$BRANCH"
+		echo "$FILE pushed to branch '$BRANCH'."
+		break
+	elif [[ "$CONFIRM" == "n" || "$CONFIRM" == "no" ]]; then
+		git reset
+		echo "$FILE unstaged, nothing will be pushed."
+		break
+	else
+		echo "Please answer Yes or No."
+	fi
 done
