@@ -21,7 +21,7 @@ else
 printf("[0] (nil)\n");
 }
 current = current->next;
-count ++;
+count++;
 }
 return (count);
 }
