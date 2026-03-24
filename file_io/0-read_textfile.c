@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * read_textfile-writes a text file to POSIX STDOUT
+ * @filename: a text file
+ * @letters: number of letters to print
+ * Return: 0 on error, letters printed on success
+ */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
@@ -17,7 +24,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		close(fd);
 		return (0);
-	}   
+	}
 	r = read(fd, buffer, letters);
 	if (r == -1)
 	{
