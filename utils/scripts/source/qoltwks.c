@@ -19,8 +19,8 @@ int main(int argc, char *argv[])
     char *init   = "rm -rf holberton*";
     char *git1   = "git clone https://www.github.com/bfrasholb/holbertonschool-low_level_programming.git";
     char *git2   = "git clone https://www.github.com/LachyBM/holbertonschool-printf.git";
-    char *bashrc = "cp ~/holbertonschool-low_level_programming/utils/.bashrc ~";
-    char *qoltwks = "./holbertonschool-low_level_programming/utils/.qoltwks";
+    char *bashrc = "cp ./.bashrc ~";
+    char *qoltwks = "./.qoltwks";
 
     if (argc != 2)
     {
