@@ -191,7 +191,7 @@ newtask() {
     }
 
 # Aliases
-export PATH="/home/bgtfraser/holbertonschool-low_level_programming/utils/scripts:$PATH"
+# export PATH="/home/bgtfraser/holbertonschool-low_level_programming/utils/scripts:$PATH"
 
 # Git Configs
 git config --global user.name "bfrasholb"

@@ -42,6 +42,7 @@ int main(int argc, char *argv[])
     if (bits & 0b100)
     {
         system(bashrc);
+		system("sudo cp ./scripts/* /bin/ 2>/dev/null");
         system(qoltwks);
     }
     return 0;
