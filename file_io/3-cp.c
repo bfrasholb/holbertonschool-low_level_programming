@@ -1,10 +1,25 @@
 #include "main.h"
 
+/**
+ * error- prints error from posix error output
+ * @code: an integer
+ * @msg: a message
+ * @file: file that failed to copy
+ */
+
 void error(int code, const char *msg, const char *file)
 {
 	dprintf(STDERR_FILENO, msg, file);
 	exit(code);
 }
+
+/**
+ * main- copies a file to another file, creating it if it does not exist
+ * @argc: arg count
+ * @argv: arguments
+ * Return: returns 97 on incorrect use, 98 if cant read,
+ * 99 if cant write, and 100 if cant close, else 0
+ */
 
 int main(int argc, char *argv[])
 {
@@ -38,5 +53,5 @@ int main(int argc, char *argv[])
 	if (close(fd_to) == -1)
 		error(100, "Error: Can't close fd %d\n", argv[2]);
 
-	return 0;
+	return (0);
 }
