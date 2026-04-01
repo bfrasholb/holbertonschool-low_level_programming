@@ -90,7 +90,7 @@ if (argc == 1)
 {
 	/* auto-confirm push */
 	system(push);
-	printf("\n%s pushed to git.\n", file);
+	printf("\n%s pushed to git.\n\n", file);
 }
 else if (argc == 2)
 {
@@ -110,12 +110,12 @@ else if (argc == 2)
 		if (c == 'y' || c == 'Y')
 		{
 			system(push);
-			printf("\n%s pushed to git.\n", file);
+			printf("\n%s pushed to git.\n\n", file);
 		}
 		else
 		{
 			system(reset);
-			printf("\n%s unstaged, nothing will be pushed.\n", file);
+			printf("\n%s unstaged, nothing will be pushed.\n\n", file);
 		}
 	}
 }
