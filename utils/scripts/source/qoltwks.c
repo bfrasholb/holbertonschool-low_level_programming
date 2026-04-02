@@ -16,10 +16,10 @@ int is_3bit_binary(const char *s)
 
 int main(int argc, char *argv[])
 {
-	char *init1   = "rm -rf holbertonschool-low*";
-	char *init2   = "rm -rf holbertonschool-pri*";
+	char *init   = "rm -rf holbertonschool-*";
 	char *git1   = "git clone git@github.com:bfrasholb/holbertonschool-low_level_programming.git";
 	char *git2   = "git clone git@github.com:LachyBM/holbertonschool-printf.git";
+	char *git3   = "git clone git@github.com:bfrasholb/holbertonschool-binary_trees.git";
 	char *bashrc = "cp ~/holbertonschool-low_level_programming/utils/.bashrc ~";
 	int completed = 0, completed1 = 0, completed2 = 0;
 
@@ -35,11 +35,7 @@ int main(int argc, char *argv[])
 	}
 	int bits = strtol(argv[1], NULL, 2);
 	printf("Parsed bits = %d\n", bits);
-	if (bits & 0b001)
-		system(init1);
-	if (bits & 0b010)
-		system(init2);
-
+	system(init);
 	if (bits & 0b001)
 	{
 		system(git1);
@@ -48,6 +44,11 @@ int main(int argc, char *argv[])
 	if (bits & 0b010)
 	{
 		system(git2);
+		completed1 = 1;
+	}
+	if (!(bits & 0b010))
+	{
+		system(git3);
 		completed1 = 1;
 	}
 		if (bits & 0b100)
