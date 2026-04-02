@@ -36,14 +36,17 @@ int main(int argc, char *argv[])
 	int bits = strtol(argv[1], NULL, 2);
 	printf("Parsed bits = %d\n", bits);
 	if (bits & 0b001)
-	{
 		system(init1);
+	if (bits & 0b010)
+		system(init2);
+
+	if (bits & 0b001)
+	{
 		system(git1);
 		completed = 1;
 	}
 	if (bits & 0b010)
 	{
-		system(init2);
 		system(git2);
 		completed1 = 1;
 	}
