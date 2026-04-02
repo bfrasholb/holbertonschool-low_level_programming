@@ -193,9 +193,3 @@ newtask() {
 # Aliases
 export PATH="~/holbertonschool-low_level_programming/utils/scripts:$PATH"
 export PATH="$HOME/.config/emacs/bin:$PATH"
-
-# Git Configs
-git config --global user.name "bfrasholb"
-git config --global user.email "13065@holbertonstudents.com"
-git config --global credential.helper 'cache --timeout=7200000000'
-git config advice.addIgnoredFile false
