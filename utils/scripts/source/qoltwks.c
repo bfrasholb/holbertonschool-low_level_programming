@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	char *init   = "rm -rf holberton*";
 	char *git1   = "git clone git@github.com:bfrasholb/holbertonschool-low_level_programming.git";
 	char *git2   = "git clone git@github.com:LachyBM/holbertonschool-printf.git";
-	char *bashrc = "cp ~/holbertonschool-low_level_programming.git/utils/.bashrc ~";
+	char *bashrc = "cp ~/holbertonschool-low_level_programming/utils/.bashrc ~";
 	int completed = 0, completed1 = 0, completed2 = 0;
 
 	if (argc != 2)
