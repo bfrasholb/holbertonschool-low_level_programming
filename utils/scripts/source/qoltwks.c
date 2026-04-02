@@ -16,8 +16,8 @@ int is_3bit_binary(const char *s)
 
 int main(int argc, char *argv[])
 {
-	char *init1   = "rm -rf holberton-low*";
-	char *init2   = "rm -rf holberton-pri*";
+	char *init1   = "rm -rf holbertonschool-low*";
+	char *init2   = "rm -rf holbertonschool-pri*";
 	char *git1   = "git clone git@github.com:bfrasholb/holbertonschool-low_level_programming.git";
 	char *git2   = "git clone git@github.com:LachyBM/holbertonschool-printf.git";
 	char *bashrc = "cp ~/holbertonschool-low_level_programming/utils/.bashrc ~";
