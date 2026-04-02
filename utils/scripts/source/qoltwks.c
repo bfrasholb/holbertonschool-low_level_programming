@@ -19,8 +19,7 @@ int main(int argc, char *argv[])
 	char *init   = "rm -rf holberton*";
 	char *git1   = "git clone git@github.com:bfrasholb/holbertonschool-low_level_programming.git";
 	char *git2   = "git clone git@github.com:LachyBM/holbertonschool-printf.git";
-	char *bashrc = "cp ./.bashrc ~";
-	char *qoltwks = "./.qoltwks";
+	char *bashrc = "cp ~/holbertonschool-low_level_programming.git/utils/.bashrc ~";
 	int completed = 0, completed1 = 0, completed2 = 0;
 
 	if (argc != 2)
@@ -50,15 +49,14 @@ int main(int argc, char *argv[])
 	{
 		system(bashrc);
 		system("sudo cp ./scripts/* /bin/ 2>/dev/null");
-		system(qoltwks);
 		completed2 = 1;
 	}
 
 	if ((bits & 0b001) && completed)
-		printf("\n---------------------------------\n      Sprint 1 Repo Cloned.      \n---------------------------------");
+		printf("\n---------------------------------------------\n      Sprint 1 Repo Cloned.      \n---------------------------------------------");
 	if ((bits & 0b010) && completed1)
-		printf("\n---------------------------------\n       Printf Repo Cloned.       \n---------------------------------");
+		printf("\n---------------------------------------------\n       Printf Repo Cloned.       \n---------------------------------------------");
 	if ((bits & 0b100) && completed2)
-		printf("\n---------------------------------\nScripts Updated, .bashrc Sourced.\n---------------------------------\n");
+		printf("\n---------------------------------------------\nScripts Updated, please run \"source .bashrc\".\n---------------------------------------------\n");
 	return 0;
 }
