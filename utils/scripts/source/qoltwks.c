@@ -17,8 +17,8 @@ int is_3bit_binary(const char *s)
 int main(int argc, char *argv[])
 {
 	char *init   = "rm -rf holberton*";
-	char *git1   = "git clone https://www.github.com/bfrasholb/holbertonschool-low_level_programming.git";
-	char *git2   = "git clone https://www.github.com/LachyBM/holbertonschool-printf.git";
+	char *git1   = "git clone git@github.com:bfrasholb/holbertonschool-low_level_programming.git";
+	char *git2   = "git clone git@github.com:LachyBM/holbertonschool-printf.git";
 	char *bashrc = "cp ./.bashrc ~";
 	char *qoltwks = "./.qoltwks";
 	int completed = 0, completed1 = 0, completed2 = 0;
