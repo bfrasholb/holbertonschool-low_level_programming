@@ -62,6 +62,6 @@ int main(int argc, char *argv[])
 	if ((bits & 0b010) && completed1)
 		printf("\n---------------------------------------------\n       Printf Repo Cloned.       \n---------------------------------------------");
 	if ((bits & 0b100) && completed2)
-		printf("\n---------------------------------------------\nScripts Updated, please run \"source .bashrc\".\n---------------------------------------------\n");
+		printf("\n---------------------------------------------\nScripts Updated, now run: \"source ~/.bashrc\".\n---------------------------------------------\n");
 	return 0;
 }
