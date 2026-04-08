@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- *main-description.
- *Return:0
+ * main- prints the sizes of standard variable types.
+ * Return: Always 0.
  */
 
 int main(void)
