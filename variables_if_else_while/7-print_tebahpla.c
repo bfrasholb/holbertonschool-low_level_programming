@@ -1,18 +1,19 @@
 #include <stdio.h>
 
 /**
- *main-description.
- *Return:0
+ * main- prints the alphabet in reverse
+ * Return: always 0
  */
 
 int main(void)
 {
-char a = 'z';
-while (a >= 'a')
-{
-putchar(a);
-a--;
-}
-putchar('\n');
-return (0);
+	char a = 'z';
+
+	while (a >= 'a')
+	{
+		putchar(a);
+		a--;
+	}
+	putchar('\n');
+	return (0);
 }

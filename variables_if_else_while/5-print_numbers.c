@@ -1,18 +1,19 @@
 #include <stdio.h>
 
 /**
- *main-description.
- *Return:0
+ * main- prints the digits 0-9
+ * Return: 0
  */
 
 int main(void)
 {
-int n = 0;
-while (n <= 9)
-{
-printf("%d", n);
-n++;
-}
-putchar('\n');
-return (0);
+	int n = 0;
+
+	while (n <= 9)
+	{
+		printf("%d", n);
+		n++;
+	}
+	putchar('\n');
+	return (0);
 }
