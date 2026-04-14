@@ -8,6 +8,8 @@ size_t rev_printlist(const dlistint_t *h)
 {
 	size_t len = 0;
 
+	if (!h)
+		return (0);
 	while (h->next != NULL)
 	{
 		len++;
@@ -48,7 +50,8 @@ size_t print_dlistint(const dlistint_t *h)
  */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	dlistint_t *new_node;
+	dlistint_t *new_node, *lru;
+	int i = 0;
 
 	if (head == NULL)
 		return (NULL);
@@ -65,6 +68,18 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 		(*head)->prev = new_node;
 
 	*head = new_node;
+
+	if (dlist_len(*head) > 5)
+	{
+		lru = *head;
+
+		while (lru->next)
+			lru = lru->next;
+
+		if (lru->prev)
+			lru->prev->next = NULL;
+		free (lru);
+	}
 
 	return (new_node);
 }
@@ -89,12 +104,12 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	{
 		if (i == index)
 		{
-			if (current->prev != NULL)
+			if (current->prev)
 				current->prev->next = current->next;
 			else
 				*head = current->next;
 
-			if (current->next != NULL)
+			if (current->next)
 				current->next->prev = current->prev;
 
 			free(current);
@@ -105,4 +120,16 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	}
 
 	return (-1);
+}
+
+static size_t dlist_len(dlistint_t *head)
+{
+    size_t i = 0;
+
+    while (head)
+    {
+        i++;
+        head = head->next;
+    }
+    return i;
 }
